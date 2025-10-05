@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Desktop Audio Files</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 40px; /* space between buttons */
+      margin-bottom: 30px; /* space between rows */
+    }
+    .btn-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      background: #f2f2f2;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Consonants</h1>
+
+  <!-- Row 1: A, B, C -->
+  <div class="row">
+    <div class="btn-box">
+      <div class="label">เกอะ</div>
+      <div class="label">าำไร</div>
+
+      <audio id="audio1" src="file_example_MP3_1MG.mp3"></audio>
+      <img src="NewProject.jpg" alt="A" class="label-img">
+      <button onclick="playAudio('audio1')">▶️ Play Audio 1</button>
+    </div>
+
+    <div class="btn-box">
+    <div class="label">Light</div>
+
+      <img src="C:\Users\Nuttapas\Downloads\New Project.jpg" alt="A" class="label-img">
+      <audio id="audio2" src="file:///C:/Users/Nuttapas/Desktop/Coding/file_example_MP3_1MG.mp3"></audio>
+      <button onclick="playAudio('audio2')">▶️ Play Audio 2</button>
+    </div>
+
+    <div class="btn-box">
+    <div class="label">Light</div>
+
+      <div class="label">C</div>
+      <audio id="audio3" src="file:///C:/Users/Nuttapas/Desktop/audio3.mp3"></audio>
+      <button onclick="playAudio('audio3')">▶️ Play Audio 3</button>
+    </div>
+
+    <div class="btn-box">
+      <div class="label">Light</div>
+      <audio id="audio3" src="file:///C:/Users/Nuttapas/Desktop/audio3.mp3"></audio>
+      <button onclick="playAudio('audio3')">▶️ Play Audio 3</button>
+    </div>
+  </div>
+
+  <!-- Row 2: D, E, F -->
+  <div class="row">
+    <div class="btn-box">
+      <div class="label">D</div>
+      <audio id="audio4" src="file:///C:/Users/Nuttapas/Desktop/audio4.mp3"></audio>
+      <button onclick="playAudio('audio4')">▶️ Play Audio 4</button>
+    </div>
+
+    <div class="btn-box">
+      <div class="label">E</div>
+      <audio id="audio5" src="file:///C:/Users/Nuttapas/Desktop/audio5.mp3"></audio>
+      <button onclick="playAudio('audio5')">▶️ Play Audio 5</button>
+    </div>
+
+    <div class="btn-box">
+      <div class="label">F</div>
+      <audio id="audio6" src="file:///C:/Users/Nuttapas/Desktop/audio6.mp3"></audio>
+      <button onclick="playAudio('audio6')">▶️ Play Audio 6</button>
+    </div>
+  </div>
+
+  <!-- Row 3: D, E, F -->
+  <div class="row">
+    <div class="btn-box">
+      <div class="label">D</div>
+      <audio id="audio4" src="file:///C:/Users/Nuttapas/Desktop/audio4.mp3"></audio>
+      <button onclick="playAudio('audio4')">▶️ Play Audio 4</button>
+    </div>
+
+   <div class="btn-box">
+      <div class="label">E</div>
+      <audio id="audio5" src="file:///C:/Users/Nuttapas/Desktop/audio5.mp3"></audio>
+      <button onclick="playAudio('audio5')">▶️ Play Audio 5</button>
+   </div>
+  </div>
+
+
+  <h2>Vowels</h2>
+
+    <!-- Row 3: D, E, F -->
+  <div class="row">
+    <div class="btn-box">
+      <div class="label">D</div>
+      <audio id="audio4" src="file:///C:/Users/Nuttapas/Desktop/audio4.mp3"></audio>
+      <button onclick="playAudio('audio4')">▶️ Play Audio 4</button>
+    </div>
+
+   <div class="btn-box">
+      <div class="label">E</div>
+      <audio id="audio5" src="file:///C:/Users/Nuttapas/Desktop/audio5.mp3"></audio>
+      <button onclick="playAudio('audio5')">▶️ Play Audio 5</button>
+   </div>
+  </div>
+
+
+    <!-- Row 3: D, E, F -->
+  <div class="row">
+    <div class="btn-box">
+      <div class="label">D</div>
+      <audio id="audio4" src="file:///C:/Users/Nuttapas/Desktop/audio4.mp3"></audio>
+      <button onclick="playAudio('audio4')">▶️ Play Audio 4</button>
+    </div>
+
+   <div class="btn-box">
+      <div class="label">E</div>
+      <audio id="audio5" src="file:///C:/Users/Nuttapas/Desktop/audio5.mp3"></audio>
+      <button onclick="playAudio('audio5')">▶️ Play Audio 5</button>
+   </div>
+  </div>
+
+  <script>
+    function playAudio(id) {
+      let a = document.getElementById(id);
+
+      // Pause all others
+      document.querySelectorAll("audio").forEach(el => {
+        if (el !== a) { el.pause(); el.currentTime = 0; }
+      });
+
+      a.play();
+    }
+  </script>
+</body>
+</html>
